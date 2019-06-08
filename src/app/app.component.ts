@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'utopia';
+
+  ngOnInit() {
+    console.log('why wont this work');
+  }
 }
