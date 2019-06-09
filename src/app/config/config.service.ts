@@ -11,7 +11,7 @@ import { catchError, retry } from 'rxjs/operators';
 export class ConfigService {
 
   constructor(private http: HttpClient) { }
-  configUrl = 'https://enigmatic-refuge-81171.herokuapp.com/pages/show'
+  configUrl = 'http://utopiachat.dv/pages/show'
 
  getConfig() {
    console.log('gettin config');
