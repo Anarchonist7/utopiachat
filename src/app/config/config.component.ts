@@ -17,6 +17,7 @@ export class ConfigComponent implements OnInit {
   config: Config;
   headers;
   error;
+  list = ['one', 'two', 'banana', 'three', 'mango', 'four'];
 
   ngOnInit() {
     this.showConfig();
@@ -25,7 +26,10 @@ export class ConfigComponent implements OnInit {
   showConfig() {
     this.configService.getConfig()
       .subscribe(
-        (data: Config) => this.config = { ...data }, // success path
+        (data: Config) => {
+          console.log('data:' , data);
+          this.config = data 
+        console.log("yuzza: ", this.config)}, // success path
         error => this.error = error // error path
       );
   }
@@ -47,6 +51,7 @@ export class ConfigComponent implements OnInit {
 }
 
 export interface Config {
-  heroesUrl: string;
-  textfile: string;
+  id: number;
+  title: string;
+  body: string;
 }
